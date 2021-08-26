@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-
+// import { Button } from 'react-bootstrap';
+import Header from './components/Header';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Login from './components/Login';
+import Register from './components/Register';
+import AddProducts from './components/AddProducts';
+import UpdateProducts from './components/UpdateProducts';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Header />
+        <h1>Toko online</h1>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route path="/add">
+          <AddProducts />
+        </Route>
+        <Route path="/update">
+          <UpdateProducts />
+        </Route>
+      </BrowserRouter>
     </div>
   );
 }
