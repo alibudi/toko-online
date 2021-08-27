@@ -1,7 +1,10 @@
+import Header from "./Header";
+
 function UpdateProducts() {
   return (
     <div>
-      <h1>Halaman login</h1>
+      <Header/>
+      <h1>Halaman updateprdosuk</h1>
     </div>
   );
 }

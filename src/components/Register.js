@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {useHistory} from 'react-router-dom';
+import Header from "./Header";
 
 function Register() {
+  useEffect(()=> {
+    if(localStorage.getItem("user-info")){
+      history.push("/add");
+    }
+  }, []);
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -26,6 +32,8 @@ function Register() {
     history.push("/add")
   }
   return (
+    <>
+    <Header/>
     <div className="col-sm-6 offset-sm-3">
       <h1>Halaman Register</h1>
       <input
@@ -56,6 +64,7 @@ function Register() {
         Sign Up
       </button>
     </div>
+    </>
   );
 }
 
