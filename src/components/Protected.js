@@ -1,6 +1,6 @@
-import Header from "./Header";
+// import Header from "./Header";
 import { useHistory } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 
 function Protected(props) {
     let Cmp = props.Cmp;
