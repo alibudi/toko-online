@@ -16,6 +16,7 @@ function Header() {
           <Nav className="me-auto navbar_wrapper">
             {localStorage.getItem("user-info") ? (
               <>
+                <Link to="/">Product</Link>
                 <Link to="/add">Add Product</Link>
                 <Link to="/update">Update product</Link>
               </>
@@ -26,16 +27,15 @@ function Header() {
               </>
             )}
           </Nav>
-          {localStorage.getItem("user-info") ?
-          <Nav>
-            <NavDropdown title={user && user.name}>
-              <NavDropdown.ItemText onClick={LogOut}>
-                Logout
-              </NavDropdown.ItemText>
-            </NavDropdown>
-          </Nav>
-          : null  
-        }
+          {localStorage.getItem("user-info") ? (
+            <Nav>
+              <NavDropdown title={user && user.name}>
+                <NavDropdown.ItemText onClick={LogOut}>
+                  Logout
+                </NavDropdown.ItemText>
+              </NavDropdown>
+            </Nav>
+          ) : null}
         </Container>
       </Navbar>
     </div>
